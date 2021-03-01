@@ -1,4 +1,5 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
@@ -85,6 +86,7 @@ module.exports = {
     hints: false,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [{ from: "src/index.html", to: "index.html" }],
     }),
