@@ -3,7 +3,8 @@ html {
   padding: 0;
 }
 body {
-  background: white;
+  /*! background by SVGBackgrounds.com */
+  background: white url("./prism.svg") no-repeat center center;
   color: black;
   font-family: sans-serif;
   padding: 0;
