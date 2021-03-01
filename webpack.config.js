@@ -63,6 +63,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|svg)$/,
+        type: "asset",
+      },
     ],
   },
   output: {
