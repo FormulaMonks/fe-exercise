@@ -1,10 +1,12 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
+    hot: true,
   },
   entry: "./src/index.tsx",
   mode: "development",
