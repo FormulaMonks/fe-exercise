@@ -1,4 +1,4 @@
-import { JsComponent } from "../JsComponent";
+import { Greeting } from "../Greeting";
 import "./styles.css";
 import styled from "styled-components";
 
@@ -10,7 +10,7 @@ const Root = styled.div`
 export function App() {
   return (
     <Root>
-      <JsComponent />
+      <Greeting />
     </Root>
   );
 }
