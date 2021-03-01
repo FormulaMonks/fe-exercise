@@ -13,6 +13,7 @@ module.exports = {
   devtool: isDevelopment ? "inline-source-map" : false,
   devServer: {
     contentBase: "./dist",
+    host: process.env.EXPOSE_ON_LAN === "true" ? "0.0.0.0" : undefined,
     hot: true,
   },
   entry: "./src/index.tsx",
