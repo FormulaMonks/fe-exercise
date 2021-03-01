@@ -2,14 +2,20 @@ const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
+const mode = process.env.NODE_ENV;
+if (mode !== "development" && mode !== "production")
+  throw new Error("Add NODE_ENV=development or =production to run Webpack");
+const isDevelopment = mode === "development";
+const isProduction = mode === "production";
+
 module.exports = {
-  devtool: "inline-source-map",
+  devtool: isDevelopment ? "inline-source-map" : false,
   devServer: {
     contentBase: "./dist",
     hot: true,
   },
   entry: "./src/index.tsx",
-  mode: "development",
+  mode,
   module: {
     rules: [
       {
@@ -22,18 +28,18 @@ module.exports = {
               [
                 "babel-plugin-styled-components",
                 {
-                  displayName: true,
+                  displayName: isDevelopment,
                   pure: true,
                 },
               ],
-              "react-refresh/babel",
-            ],
+              isDevelopment ? "react-refresh/babel" : undefined,
+            ].filter((x) => x),
             presets: [
               "@babel/preset-typescript",
               [
                 "@babel/preset-react",
                 {
-                  development: true,
+                  development: isDevelopment,
                   runtime: "automatic",
                 },
               ],
@@ -50,7 +56,9 @@ module.exports = {
             options: {
               modules: {
                 compileType: "module",
-                localIdentName: "[name]_[local]_[hash:base64:5]",
+                localIdentName: isDevelopment
+                  ? "[name]_[local]_[hash:base64:5]"
+                  : "[local]_[hash:base64]",
                 mode: (path) => {
                   const inCurrentDir = path.startsWith(__dirname);
                   if (!inCurrentDir) return "global";

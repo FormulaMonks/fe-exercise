@@ -3,7 +3,7 @@
     "format": "prettier --write .",
     "format-verify": "prettier --check .",
     "lint": "eslint .",
-    "start": "webpack serve",
+    "start": "NODE_ENV=development webpack serve",
     "typecheck": "tsc",
     "verify": "npm run typecheck && npm run lint && npm run format-verify"
   },
