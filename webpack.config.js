@@ -18,7 +18,16 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            plugins: ["react-refresh/babel"],
+            plugins: [
+              [
+                "babel-plugin-styled-components",
+                {
+                  displayName: true,
+                  pure: true,
+                },
+              ],
+              "react-refresh/babel",
+            ],
             presets: [
               "@babel/preset-typescript",
               [
