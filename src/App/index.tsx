@@ -1,5 +1,5 @@
 import { JsComponent } from "../JsComponent";
-import "./global.css";
+import "./styles.css";
 
 export function App() {
   return (

@@ -34,7 +34,25 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+        use: [
+          { loader: "style-loader" },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                compileType: "module",
+                localIdentName: "[name]_[local]_[hash:base64:5]",
+                mode: (path) => {
+                  const inCurrentDir = path.startsWith(__dirname);
+                  if (!inCurrentDir) return "global";
+                  const relative = path.substr(__dirname.length + 1);
+                  if (relative.includes("node_modules")) return "global";
+                  return "local";
+                },
+              },
+            },
+          },
+        ],
       },
     ],
   },
