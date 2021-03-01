@@ -18,6 +18,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
+            plugins: ["react-refresh/babel"],
             presets: [
               "@babel/preset-typescript",
               [
@@ -44,6 +45,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: "src/index.html", to: "index.html" }],
     }),
+    new ReactRefreshWebpackPlugin(),
   ],
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
