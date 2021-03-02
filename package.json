@@ -40,8 +40,5 @@
     "npm": "^7.4.0"
   },
   "name": "@theorem/fe-exercise",
-  "private": true,
-  "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
-  }
+  "private": true
 }
