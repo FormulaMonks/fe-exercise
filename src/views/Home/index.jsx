@@ -3,7 +3,7 @@ import { MainLayout } from "../../layouts";
 
 export function Home() {
   return (
-    <MainLayout>
+    <MainLayout title="Home | Honesto">
       <div className={styles.container}>
         <div>Hello!</div>
       </div>

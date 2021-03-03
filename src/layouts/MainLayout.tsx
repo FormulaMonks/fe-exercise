@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import styled from "styled-components";
 import prism from "./prism.svg";
 import { Header } from "./Header";
@@ -16,10 +16,14 @@ const Content = styled.div`
 
 type Props = {
   children: ReactNode;
+  title: string;
 };
 
 export function MainLayout(props: Props) {
-  const { children } = props;
+  const { children, title } = props;
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   return (
     <Background>
