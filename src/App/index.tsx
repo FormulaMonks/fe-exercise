@@ -1,11 +1,6 @@
-import { Greeting } from "../Greeting";
-import { MainLayout } from "../layouts";
+import { Home } from "../views/Home";
 import "./styles.css";
 
 export function App() {
-  return (
-    <MainLayout>
-      <Greeting />
-    </MainLayout>
-  );
+  return <Home />;
 }
