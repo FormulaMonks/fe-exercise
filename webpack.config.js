@@ -12,6 +12,7 @@ const isProduction = mode === "production";
 module.exports = {
   devtool: isDevelopment ? "inline-source-map" : false,
   devServer: {
+    clientLogLevel: "warn",
     contentBase: "./dist",
     host: process.env.EXPOSE_ON_LAN === "true" ? "0.0.0.0" : undefined,
     hot: true,
