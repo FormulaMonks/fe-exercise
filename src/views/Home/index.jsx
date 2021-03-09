@@ -1,5 +1,5 @@
 import styles from "./styles.css";
-import { MainLayout } from "../../layouts";
+import { MainLayout } from "src/layouts";
 
 export function Home() {
   return (
