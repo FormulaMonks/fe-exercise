@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { accentColor } from "src/colors";
 import { Link } from "src/links";
 
 const Root = styled.div`
   align-items: center;
-  background-color: #201d29;
+  background-color: ${accentColor};
   box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
   box-sizing: border-box;
   color: white;
