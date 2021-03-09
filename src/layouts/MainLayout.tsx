@@ -10,8 +10,10 @@ const Background = styled.div`
 `;
 
 const Content = styled.div`
+  box-sizing: border-box;
   max-width: 800px;
   margin: 0 auto;
+  padding: 80px 16px 100px;
 `;
 
 type Props = {
