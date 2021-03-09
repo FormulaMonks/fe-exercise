@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "src/links";
 
 const Root = styled.div`
   align-items: center;
@@ -12,7 +13,7 @@ const Root = styled.div`
   padding: 0 32px;
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   color: white;
   font-size: 28px;
   font-weight: bold;
