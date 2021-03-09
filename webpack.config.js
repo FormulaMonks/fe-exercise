@@ -95,6 +95,9 @@ module.exports = {
     new ReactRefreshWebpackPlugin(),
   ],
   resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+    },
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
 };
