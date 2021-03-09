@@ -1,6 +1,11 @@
-import { Home } from "../views/Home";
+import { BrowserRouter } from "react-router-dom";
 import "./styles.css";
+import { Routes } from "./Routes";
 
 export function App() {
-  return <Home />;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 }

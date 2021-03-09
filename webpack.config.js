@@ -14,6 +14,7 @@ module.exports = {
   devServer: {
     clientLogLevel: "warn",
     contentBase: "./dist",
+    historyApiFallback: true,
     host: process.env.EXPOSE_ON_LAN === "true" ? "0.0.0.0" : undefined,
     hot: true,
   },
