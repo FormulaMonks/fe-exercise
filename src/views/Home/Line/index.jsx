@@ -7,7 +7,7 @@ export function Line({ person }) {
       <img alt="User avatar" className={styles.avatar} src={person.avatarUrl} />
       <div className={styles.name}>{person.name}</div>
       <PrimaryButton action={`/give/${encodeURIComponent(person.id)}`}>
-        Provide Feedback
+        Give Feedback
       </PrimaryButton>
     </div>
   );

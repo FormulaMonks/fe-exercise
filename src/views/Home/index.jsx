@@ -7,7 +7,7 @@ export function Home() {
   const people = usePeople();
   return (
     <MainLayout title="Home | Honesto">
-      <h1>Share Feedback</h1>
+      <h1>Give Feedback</h1>
       <div className={styles.card}>
         {people.map((person) => (
           <Line key={person.id} person={person} />
