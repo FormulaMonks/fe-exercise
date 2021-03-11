@@ -1,5 +1,5 @@
 import { Switch, Redirect, Route } from "react-router-dom";
-import { GiveFeedback, Home, ReviewFeedback } from "src/views";
+import { GiveFeedback, Home, NotFound, ReviewFeedback } from "src/views";
 
 export function Routes() {
   return (
@@ -43,6 +43,9 @@ export function Routes() {
           return <ReviewFeedback key={personId} personId={personId} />;
         }}
       />
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   );
 }
