@@ -1,5 +1,5 @@
 import { Switch, Redirect, Route } from "react-router-dom";
-import { GiveFeedback, Home } from "src/views";
+import { GiveFeedback, Home, ReviewFeedback } from "src/views";
 
 export function Routes() {
   return (
@@ -30,6 +30,17 @@ export function Routes() {
               questionId={questionId}
             />
           );
+        }}
+      />
+      <Route exact path="/review">
+        <ReviewFeedback />
+      </Route>
+      <Route
+        exact
+        path="/review/:personId"
+        render={(props) => {
+          const { personId } = props.match.params;
+          return <ReviewFeedback key={personId} personId={personId} />;
         }}
       />
     </Switch>
