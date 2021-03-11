@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import styles from "./styles.css";
 import { MainLayout } from "src/layouts";
+import { Spinner } from "src/Spinner";
 
 const Container = styled.div`
   align-items: center;
@@ -10,6 +10,7 @@ const Container = styled.div`
   min-height: 400px;
   width: 100%;
 `;
+
 const H1 = styled.h1`
   font-size: 24px;
 `;
@@ -18,12 +19,7 @@ export function Loading() {
   return (
     <MainLayout title="Loading">
       <Container>
-        <div className={styles.ldsRing}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <Spinner />
         <H1>Loading...</H1>
       </Container>
     </MainLayout>
