@@ -4,6 +4,7 @@ import { primaryLightColor, primaryMediumColor, borderColor } from "src/colors";
 import { usePeople } from "src/data";
 import { MainLayout } from "src/layouts";
 import { Link } from "src/links";
+import { NotFound } from "../NotFound";
 import { Feedback } from "./Feedback";
 
 const Avatar = styled.img`
@@ -54,7 +55,7 @@ export function ReviewFeedback(props: Props) {
   const { personId } = props;
   const people = usePeople();
   const person = personId ? people.find((p) => p.id === personId) : undefined;
-  if (personId && !person) throw new Error("Person not found");
+  if (personId && !person) return <NotFound />;
   return (
     <MainLayout title="Review Feedback | Honesto">
       <H1>Review Feedback</H1>
