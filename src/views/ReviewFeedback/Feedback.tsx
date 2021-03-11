@@ -17,17 +17,20 @@ type Props = { person: Person };
 export function Feedback(props: Props) {
   const { person } = props;
   const feedback = useFeedbackFor(person);
-
   return (
     <Container>
       <H2>Feedback you have provided for {person.name}</H2>
-      {feedback.map((row) => (
-        <FeedbackSection
-          key={row.question.id}
-          question={row.question.text}
-          answer={row.answer}
-        />
-      ))}
+      {feedback === "loading" ? (
+        <p>Loading...</p>
+      ) : (
+        feedback.map((row) => (
+          <FeedbackSection
+            key={row.question.id}
+            question={row.question.text}
+            answer={row.answer}
+          />
+        ))
+      )}
     </Container>
   );
 }

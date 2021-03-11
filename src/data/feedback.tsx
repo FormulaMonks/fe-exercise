@@ -9,6 +9,8 @@ const dummyAnswer2 =
 
 export function useFeedbackFor(person: Person) {
   const questions = useQuestionsFor(person);
+  // Dummy condition to infer a possible return type
+  if (questions.all.length === -99) return "loading";
   return questions.all.map((question, i) => {
     return {
       question,
