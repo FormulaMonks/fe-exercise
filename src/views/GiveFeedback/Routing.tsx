@@ -1,5 +1,6 @@
 import { Redirect } from "react-router-dom";
 import { Person, usePersonById, useQuestionsFor } from "src/data";
+import { Loading } from "../Loading";
 import { NotFound } from "../NotFound";
 import { GiveFeedbackView } from "./View";
 
@@ -23,6 +24,7 @@ type Props = {
 export function GiveFeedback(props: Props) {
   const { personId, questionId } = props;
   const person = usePersonById(personId);
+  if (person === "loading") return <Loading />;
   if (person === "not-found") return <NotFound />;
   if (!questionId) return <RedirectToFirstQuestion person={person} />;
   return <GiveFeedbackView person={person} questionId={questionId} />;

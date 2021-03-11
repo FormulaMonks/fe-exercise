@@ -4,6 +4,7 @@ import { primaryLightColor, primaryMediumColor, borderColor } from "src/colors";
 import { usePeople } from "src/data";
 import { MainLayout } from "src/layouts";
 import { Link } from "src/links";
+import { Loading } from "../Loading";
 import { NotFound } from "../NotFound";
 import { Feedback } from "./Feedback";
 
@@ -54,6 +55,7 @@ type Props = {
 export function ReviewFeedback(props: Props) {
   const { personId } = props;
   const people = usePeople();
+  if (people === "loading") return <Loading />;
   const person = personId ? people.find((p) => p.id === personId) : undefined;
   if (personId && !person) return <NotFound />;
   return (

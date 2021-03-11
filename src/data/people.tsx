@@ -26,10 +26,10 @@ const people: Person[] = [
   };
 });
 
-export function usePeople() {
+export function usePeople(): Person[] | "loading" {
   return people;
 }
 
-export function usePersonById(id: string): Person | "not-found" {
+export function usePersonById(id: string): Person | "loading" | "not-found" {
   return people.find((p) => p.id === id) || "not-found";
 }
