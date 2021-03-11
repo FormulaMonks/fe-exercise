@@ -7,6 +7,7 @@ import { GiveFeedbackView } from "./View";
 function RedirectToFirstQuestion(props: { person: Person }) {
   const { person } = props;
   const questions = useQuestionsFor(person);
+  if (questions === "loading") return <Loading />;
   return (
     <Redirect
       to={`/give/${encodeURIComponent(person.id)}/${encodeURIComponent(

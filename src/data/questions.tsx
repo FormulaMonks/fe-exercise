@@ -51,6 +51,9 @@ export function useQuestionsFor(person: Person) {
       throw new Error("Did not find question " + question.id);
     return currentIndex;
   };
+
+  // Dummy condition to infer a possible return type
+  if (first.id === "zzz") return "loading";
   return {
     all: questions,
     byId: (questionId: string) => questions.find((q) => q.id === questionId),

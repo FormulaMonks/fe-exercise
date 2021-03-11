@@ -3,6 +3,7 @@ import { MainLayout } from "src/layouts";
 import { PrimaryButton, SecondaryButton } from "src/buttons";
 import { Person, useQuestionsFor } from "src/data";
 import { borderColor } from "src/colors";
+import { Loading } from "../Loading";
 import { NotFound } from "../NotFound";
 
 const Avatar = styled.img`
@@ -56,6 +57,7 @@ type Props = {
 export function GiveFeedbackView(props: Props) {
   const { person, questionId } = props;
   const questions = useQuestionsFor(person);
+  if (questions === "loading") return <Loading />;
   const question = questions.byId(questionId);
   if (!question) return <NotFound />;
   const nextQuestion = questions.next(question);
