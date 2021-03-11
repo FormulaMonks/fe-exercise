@@ -23,7 +23,7 @@ type Props = {
 export function GiveFeedback(props: Props) {
   const { personId, questionId } = props;
   const person = usePersonById(personId);
-  if (!person) return <NotFound />;
+  if (person === "not-found") return <NotFound />;
   if (!questionId) return <RedirectToFirstQuestion person={person} />;
   return <GiveFeedbackView person={person} questionId={questionId} />;
 }

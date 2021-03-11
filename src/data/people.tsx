@@ -30,6 +30,6 @@ export function usePeople() {
   return people;
 }
 
-export function usePersonById(id: string) {
-  return people.find((p) => p.id === id);
+export function usePersonById(id: string): Person | "not-found" {
+  return people.find((p) => p.id === id) || "not-found";
 }
