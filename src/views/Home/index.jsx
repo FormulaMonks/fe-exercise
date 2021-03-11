@@ -1,4 +1,5 @@
 import styles from "./styles.css";
+import { Card } from "src/Card";
 import { MainLayout } from "src/layouts";
 import { usePeople } from "src/data";
 import { Line } from "./Line";
@@ -8,11 +9,11 @@ export function Home() {
   return (
     <MainLayout title="Home | Honesto">
       <h1 className={styles.heading}>Give Feedback</h1>
-      <div className={styles.card}>
+      <Card>
         {people.map((person) => (
           <Line key={person.id} person={person} />
         ))}
-      </div>
+      </Card>
     </MainLayout>
   );
 }
