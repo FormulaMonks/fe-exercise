@@ -3,6 +3,7 @@ import { MainLayout } from "src/layouts";
 import { PrimaryButton, SecondaryButton } from "src/buttons";
 import { Person, useQuestionsFor } from "src/data";
 import { borderColor } from "src/colors";
+import { NotFound } from "../NotFound";
 
 const Avatar = styled.img`
   border-radius: 50%;
@@ -56,7 +57,7 @@ export function GiveFeedbackView(props: Props) {
   const { person, questionId } = props;
   const questions = useQuestionsFor(person);
   const question = questions.byId(questionId);
-  if (!question) throw new Error("Question not found");
+  if (!question) return <NotFound />;
   const nextQuestion = questions.next(question);
   const prevQuestion = questions.prev(question);
   return (
