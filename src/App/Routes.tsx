@@ -1,5 +1,5 @@
 import { Switch, Route } from "react-router-dom";
-import { Home } from "src/views/Home";
+import { Home } from "src/views";
 
 export function Routes() {
   return (
