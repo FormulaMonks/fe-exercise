@@ -1,6 +1,18 @@
-import { useQuery } from "react-query";
-import { getLatestFeedbackFor } from "./fake";
-import { Person } from "./types";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { addFeedbackFor, getLatestFeedbackFor } from "./fake";
+import { FeedbackPiece, Person } from "./types";
+
+export function useAddFeedbackFor(person: Person) {
+  const queryClient = useQueryClient();
+  return useMutation(
+    (answers: FeedbackPiece[]) => addFeedbackFor(person, answers),
+    {
+      onSuccess: () => {
+        queryClient.removeQueries(["feedback", person.id]);
+      },
+    }
+  );
+}
 
 export function useFeedbackFor(person: Person) {
   const result = useQuery(["feedback", person.id], () =>
