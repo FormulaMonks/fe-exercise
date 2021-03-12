@@ -1,4 +1,4 @@
-import { Person } from "../types";
+import { Person, Question } from "../types";
 import { getPeople } from "./people";
 import { getQuestionsFor } from "./questions";
 import { sleepABit } from "./sleep";
@@ -41,6 +41,18 @@ const state = (async function () {
     })
   );
 })();
+
+export async function addFeedbackFor(
+  person: Person,
+  answers: { answer: string; question: Question }[]
+) {
+  await sleepABit();
+  (await state).push({
+    answers,
+    person,
+    timestamp: Date.now(),
+  });
+}
 
 export async function getLatestFeedbackFor(person: Person) {
   await sleepABit();
