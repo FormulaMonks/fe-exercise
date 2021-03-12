@@ -40,7 +40,11 @@ const questionsForPerson = (person: Person): Question[] =>
       .replace(/\$name/g, person.name),
   }));
 
-export async function getQuestionsFor(person: Person) {
-  await sleepABit();
+export async function getQuestionsFor(
+  person: Person,
+  options: { delay?: boolean } = {}
+) {
+  const { delay = true } = options;
+  if (delay) await sleepABit();
   return questionsForPerson(person);
 }
