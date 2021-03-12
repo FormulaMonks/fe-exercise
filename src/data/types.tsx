@@ -1,3 +1,4 @@
+export type FeedbackPiece = { answer: string; question: Question };
 export type Person = {
   avatarUrl: string;
   id: string;

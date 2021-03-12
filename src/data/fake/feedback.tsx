@@ -1,4 +1,4 @@
-import { Person, Question } from "../types";
+import { FeedbackPiece, Person } from "../types";
 import { getPeople } from "./people";
 import { getQuestionsFor } from "./questions";
 import { sleepABit } from "./sleep";
@@ -42,10 +42,7 @@ const state = (async function () {
   );
 })();
 
-export async function addFeedbackFor(
-  person: Person,
-  answers: { answer: string; question: Question }[]
-) {
+export async function addFeedbackFor(person: Person, answers: FeedbackPiece[]) {
   await sleepABit();
   (await state).push({
     answers,
