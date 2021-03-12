@@ -3,6 +3,20 @@ import { getPeople } from "./people";
 import { getQuestionsFor } from "./questions";
 import { sleepABit } from "./sleep";
 
+function findMaximumItem<Item>(
+  list: Item[],
+  measurement: (item: Item) => number
+): Item | undefined {
+  let max = undefined as undefined | { item: Item; val: number };
+  list.forEach((item) => {
+    const val = measurement(item);
+    if (max == undefined || val > max.val) {
+      max = { item, val };
+    }
+  });
+  return max?.item;
+}
+
 const state = (async function () {
   const people = await getPeople();
 
@@ -28,11 +42,15 @@ const state = (async function () {
   );
 })();
 
-export async function getFeedbackFor(person: Person) {
+export async function getLatestFeedbackFor(person: Person) {
   await sleepABit();
-  const feedbackForPerson = (await state).find(
+  const feedbackForPerson = (await state).filter(
     (row) => row.person.id === person.id
   );
-  if (!feedbackForPerson) return [];
-  return feedbackForPerson.answers;
+  const latestFeedback = findMaximumItem(
+    feedbackForPerson,
+    (item) => item.timestamp
+  );
+  if (!latestFeedback) return [];
+  return latestFeedback.answers;
 }
