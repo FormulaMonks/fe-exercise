@@ -1,20 +1,38 @@
 import { Person } from "../types";
+import { getPeople } from "./people";
 import { getQuestionsFor } from "./questions";
 import { sleepABit } from "./sleep";
 
+const state = (async function () {
+  const people = await getPeople();
+
+  return Promise.all(
+    people.map(async function (person) {
+      const dummyAnswer1 =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+      const dummyAnswer2 =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.";
+      const questions = await getQuestionsFor(person, { delay: false });
+      return {
+        answers: questions.map((question, i) => {
+          return {
+            question,
+            answer: i % 2 === 1 ? dummyAnswer1 : dummyAnswer2,
+          };
+        }),
+        person: person,
+        timestamp: Date.now() - 24 * 3600000,
+      };
+    })
+  );
+})();
+
 export async function getFeedbackFor(person: Person) {
-  const dummyAnswer1 =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-  const dummyAnswer2 =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.";
-
   await sleepABit();
-  const questions = await getQuestionsFor(person, { delay: false });
-  return questions.map((question, i) => {
-    return {
-      question,
-      answer: i % 2 === 1 ? dummyAnswer1 : dummyAnswer2,
-    };
-  });
+  const feedbackForPerson = (await state).find(
+    (row) => row.person.id === person.id
+  );
+  if (!feedbackForPerson) return [];
+  return feedbackForPerson.answers;
 }
