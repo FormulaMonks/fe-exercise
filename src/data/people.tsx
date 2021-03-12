@@ -1,8 +1,4 @@
-export type Person = {
-  avatarUrl: string;
-  id: string;
-  name: string;
-};
+import { Person } from "./types";
 
 const people: Person[] = [
   { name: "John Smith", avatarUrl: "https://i.pravatar.cc/150?img=68" },

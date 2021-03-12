@@ -1,6 +1,4 @@
-import type { Person } from "./people";
-
-export type Question = { id: string; text: string };
+import { Person, Question } from "./types";
 
 const questions: Question[] = [
   { text: "How much do you trust $name to deliver high quality work?" },

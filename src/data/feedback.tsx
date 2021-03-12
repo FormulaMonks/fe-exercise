@@ -1,4 +1,4 @@
-import { Person } from "./people";
+import { Person } from "./types";
 import { useQuestionsFor } from "./questions";
 
 const dummyAnswer1 =
