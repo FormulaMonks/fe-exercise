@@ -1,5 +1,6 @@
 import { Person } from "../types";
 import { getQuestionsFor } from "./questions";
+import { sleepABit } from "./sleep";
 
 export async function getFeedbackFor(person: Person) {
   const dummyAnswer1 =
@@ -8,6 +9,7 @@ export async function getFeedbackFor(person: Person) {
   const dummyAnswer2 =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.";
 
+  await sleepABit();
   const questions = await getQuestionsFor(person);
   return questions.map((question, i) => {
     return {

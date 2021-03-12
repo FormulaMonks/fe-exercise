@@ -1,4 +1,5 @@
 import { Person, Question } from "../types";
+import { sleepABit } from "./sleep";
 
 const questions: Question[] = [
   { text: "How much do you trust $name to deliver high quality work?" },
@@ -40,5 +41,6 @@ const questionsForPerson = (person: Person): Question[] =>
   }));
 
 export async function getQuestionsFor(person: Person) {
+  await sleepABit();
   return questionsForPerson(person);
 }

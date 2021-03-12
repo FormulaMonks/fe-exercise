@@ -1,4 +1,5 @@
 import { Person } from "../types";
+import { sleepABit } from "./sleep";
 
 const people: Person[] = [
   { name: "John Smith", avatarUrl: "https://i.pravatar.cc/150?img=68" },
@@ -23,5 +24,6 @@ const people: Person[] = [
 });
 
 export async function getPeople() {
+  await sleepABit();
   return people;
 }
