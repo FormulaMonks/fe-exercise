@@ -1,9 +1,13 @@
+import { useQuery } from "react-query";
 import { getPeople } from "./fake";
 import { Person } from "./types";
-import { useAsyncData } from "./useAsyncData";
 
 export function usePeople(): Person[] | "loading" {
-  return useAsyncData(getPeople);
+  const result = useQuery("people", getPeople);
+  if (result.status === "error") throw result.error;
+  if (result.status === "idle") throw new Error("Unexpected idle");
+  if (result.status === "loading") return "loading";
+  return result.data;
 }
 
 export function usePersonById(id: string): Person | "loading" | "not-found" {

@@ -10,7 +10,7 @@ export async function getFeedbackFor(person: Person) {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.";
 
   await sleepABit();
-  const questions = await getQuestionsFor(person);
+  const questions = await getQuestionsFor(person, { delay: false });
   return questions.map((question, i) => {
     return {
       question,

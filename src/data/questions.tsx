@@ -1,13 +1,15 @@
-import { useCallback } from "react";
+import { useQuery } from "react-query";
 import { Person, Question } from "./types";
 import { getQuestionsFor } from "./fake";
-import { useAsyncData } from "./useAsyncData";
 
 export function useQuestionsFor(person: Person) {
-  const questions = useAsyncData(
-    useCallback(() => getQuestionsFor(person), [person.id])
+  const result = useQuery(["questions", person.id], () =>
+    getQuestionsFor(person)
   );
-  if (questions === "loading") return "loading";
+  if (result.status === "error") throw result.error;
+  if (result.status === "idle") throw new Error("Unexpected idle");
+  if (result.status === "loading") return "loading";
+  const questions = result.data;
 
   const first = questions[0];
   if (!first) throw new Error("No questions for person " + person.id);

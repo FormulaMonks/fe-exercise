@@ -1,8 +1,13 @@
-import { useCallback } from "react";
+import { useQuery } from "react-query";
 import { getFeedbackFor } from "./fake";
 import { Person } from "./types";
-import { useAsyncData } from "./useAsyncData";
 
 export function useFeedbackFor(person: Person) {
-  return useAsyncData(useCallback(() => getFeedbackFor(person), [person.id]));
+  const result = useQuery(["feedback", person.id], () =>
+    getFeedbackFor(person)
+  );
+  if (result.status === "error") throw result.error;
+  if (result.status === "idle") throw new Error("Unexpected idle");
+  if (result.status === "loading") return "loading";
+  return result.data;
 }
