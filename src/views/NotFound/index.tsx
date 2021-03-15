@@ -4,14 +4,13 @@ import { MainLayout } from "src/layouts";
 
 const H1 = styled.h1`
   font-size: 28px;
-
   margin: 0 0 40px;
 `;
 
 const Message = styled.div`
   font-size: 18px;
   line-height: 1.4;
-  padding: 40px;
+  padding: 40px 40px 50px;
 `;
 
 const P = styled.p`
