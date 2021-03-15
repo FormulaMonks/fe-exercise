@@ -23,13 +23,7 @@ export function Routes() {
         path="/give/:personId/:questionId"
         render={(props) => {
           const { personId, questionId } = props.match.params;
-          return (
-            <GiveFeedback
-              key={[personId, questionId].join("-")}
-              personId={personId}
-              questionId={questionId}
-            />
-          );
+          return <GiveFeedback personId={personId} questionId={questionId} />;
         }}
       />
       <Route exact path="/review">

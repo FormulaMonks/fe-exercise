@@ -28,5 +28,11 @@ export function GiveFeedback(props: Props) {
   if (person === "loading") return <Loading />;
   if (person === "not-found") return <NotFound />;
   if (!questionId) return <RedirectToFirstQuestion person={person} />;
-  return <GiveFeedbackView person={person} questionId={questionId} />;
+  return (
+    <GiveFeedbackView
+      key={[personId, questionId].join("-")}
+      person={person}
+      questionId={questionId}
+    />
+  );
 }
