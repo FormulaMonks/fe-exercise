@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { MainLayout } from "src/layouts";
 import { PrimaryButton, SecondaryButton } from "src/buttons";
-import { Person, useQuestionsFor } from "src/data";
+import { Person, Question, useQuestionsFor } from "src/data";
 import { borderColor } from "src/colors";
 import { Loading } from "../Loading";
-import { NotFound } from "../NotFound";
 
 const Avatar = styled.img`
   border-radius: 50%;
@@ -51,15 +50,13 @@ const Textarea = styled.textarea`
 
 type Props = {
   person: Person;
-  questionId: string;
+  question: Question;
 };
 
 export function View(props: Props) {
-  const { person, questionId } = props;
+  const { person, question } = props;
   const questions = useQuestionsFor(person);
   if (questions === "loading") return <Loading />;
-  const question = questions.byId(questionId);
-  if (!question) return <NotFound />;
   const nextQuestion = questions.next(question);
   const prevQuestion = questions.prev(question);
   return (
