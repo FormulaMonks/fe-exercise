@@ -17,6 +17,7 @@ export function State(props: Props) {
 
   return (
     <View
+      defaultValue=""
       key={[person.id, questionId].join("-")}
       onChange={() => {}}
       onSubmit={() => {}}
