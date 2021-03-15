@@ -29,7 +29,7 @@ const H1 = styled.h1`
   margin: 0;
 `;
 
-const Question = styled.div`
+const QuestionContainer = styled.div`
   align-items: center;
   display: flex;
   margin-bottom: 40px;
@@ -65,7 +65,7 @@ export function View(props: Props) {
   return (
     <MainLayout title="Give Feedback | Honesto">
       <Container>
-        <Question>
+        <QuestionContainer>
           <Avatar
             alt="User avatar"
             height={100}
@@ -73,7 +73,7 @@ export function View(props: Props) {
             src={person.avatarUrl}
           />
           <H1>{question.text}</H1>
-        </Question>
+        </QuestionContainer>
         <Textarea autoFocus />
         <Buttons>
           <div>
