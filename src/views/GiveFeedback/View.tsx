@@ -54,7 +54,7 @@ type Props = {
   questionId: string;
 };
 
-export function GiveFeedbackView(props: Props) {
+export function View(props: Props) {
   const { person, questionId } = props;
   const questions = useQuestionsFor(person);
   if (questions === "loading") return <Loading />;

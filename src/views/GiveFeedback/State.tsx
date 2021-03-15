@@ -1,5 +1,5 @@
 import { Person } from "src/data";
-import { GiveFeedbackView } from "./View";
+import { View } from "./View";
 
 type Props = {
   person: Person;
@@ -9,7 +9,7 @@ type Props = {
 export function State(props: Props) {
   const { person, questionId } = props;
   return (
-    <GiveFeedbackView
+    <View
       key={[person.id, questionId].join("-")}
       person={person}
       questionId={questionId}
