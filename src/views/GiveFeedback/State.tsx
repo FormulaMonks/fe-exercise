@@ -18,6 +18,8 @@ export function State(props: Props) {
   return (
     <View
       key={[person.id, questionId].join("-")}
+      onChange={() => {}}
+      onSubmit={() => {}}
       person={person}
       question={question}
     />

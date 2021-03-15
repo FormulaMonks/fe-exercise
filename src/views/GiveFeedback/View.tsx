@@ -49,12 +49,14 @@ const Textarea = styled.textarea`
 `;
 
 type Props = {
+  onChange: (answer: string) => void;
+  onSubmit: () => void;
   person: Person;
   question: Question;
 };
 
 export function View(props: Props) {
-  const { person, question } = props;
+  const { onChange, onSubmit, person, question } = props;
   const questions = useQuestionsFor(person);
   if (questions === "loading") return <Loading />;
   const nextQuestion = questions.next(question);
@@ -71,7 +73,7 @@ export function View(props: Props) {
           />
           <H1>{question.text}</H1>
         </QuestionContainer>
-        <Textarea autoFocus />
+        <Textarea autoFocus onChange={(e) => onChange(e.target.value)} />
         <Buttons>
           <div>
             {prevQuestion && (
@@ -94,7 +96,7 @@ export function View(props: Props) {
                 Next
               </PrimaryButton>
             ) : (
-              <PrimaryButton action="/">Complete</PrimaryButton>
+              <PrimaryButton action={onSubmit}>Complete</PrimaryButton>
             )}
           </div>
         </Buttons>
