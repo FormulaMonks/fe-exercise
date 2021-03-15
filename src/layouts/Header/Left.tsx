@@ -12,6 +12,15 @@ const Container = styled.div`
   }
 `;
 
+const LinkText = styled.div`
+  align-items: center;
+  border: 5px solid transparent;
+  display: flex;
+  .active & {
+    border-bottom: 5px ridge white;
+  }
+`;
+
 const Logo = styled(Link)`
   color: white;
   font-size: 28px;
@@ -22,7 +31,9 @@ const Logo = styled(Link)`
 `;
 
 const NavLink = styled(Link)`
+  align-items: stretch;
   color: white;
+  display: flex;
   font-size: 18px;
   font-weight: bold;
   /* Adjust vertical align visually */
@@ -34,8 +45,12 @@ export function Left() {
   return (
     <Container>
       <Logo href="/">Honesto</Logo>
-      <NavLink href="/">Give feedback</NavLink>
-      <NavLink href="/review">Review feedback</NavLink>
+      <NavLink href="/">
+        <LinkText>Give feedback</LinkText>
+      </NavLink>
+      <NavLink href="/review">
+        <LinkText>Review feedback</LinkText>
+      </NavLink>
     </Container>
   );
 }
