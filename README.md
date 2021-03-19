@@ -6,4 +6,4 @@ The project uses Prettier formatter. Use [Prettier in your editor](https://prett
 
 ## Tooling
 
-The project is a React application. Tooling supports both TypeScript and JavaScript components, as well as both CSS-in-JS and CSS modules for styling. See examples of both in App and Greeting components.
+The project is a React application. Tooling supports both TypeScript and JavaScript components, as well as both CSS-in-JS and CSS modules for styling. See examples of both in Home and NotFound components.
