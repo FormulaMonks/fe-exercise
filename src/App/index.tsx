@@ -5,6 +5,7 @@ import { ErrorHandler } from "./ErrorHandler";
 import { Routes } from "./Routes";
 import { Crash } from "src/views";
 
+// react-query is used by our data functions in src/data
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
