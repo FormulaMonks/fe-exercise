@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Card } from "src/Card";
 
+// We avoid using MainLayout here for these reasons:
+// - Minimize the risk of crashing again if it was the layout causing the error;
+// - Make it very clear to the user that the application crashed by removing most UI elements.
 const Layout = styled.div`
   align-items: center;
   box-sizing: border-box;
