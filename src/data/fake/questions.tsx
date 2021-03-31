@@ -1,5 +1,5 @@
 import { Person, Question } from "../types";
-import { sleepABit } from "./sleep";
+import { pretendNetwork } from "./pretendNetwork";
 
 const questions: Question[] = [
   { text: "How much do you trust $name to deliver high quality work?" },
@@ -42,9 +42,9 @@ const questionsForPerson = (person: Person): Question[] =>
 
 export async function getQuestionsFor(
   person: Person,
-  options: { delay?: boolean } = {}
+  options: { shouldPretendNetwork?: boolean } = {}
 ) {
-  const { delay = true } = options;
-  if (delay) await sleepABit();
+  const { shouldPretendNetwork = true } = options;
+  if (shouldPretendNetwork) await pretendNetwork();
   return questionsForPerson(person);
 }

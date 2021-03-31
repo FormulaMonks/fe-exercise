@@ -1,7 +1,7 @@
 import { FeedbackPiece, Person } from "../types";
 import { getPeople } from "./people";
 import { getQuestionsFor } from "./questions";
-import { sleepABit } from "./sleep";
+import { pretendNetwork } from "./pretendNetwork";
 
 function findMaximumItem<Item>(
   list: Item[],
@@ -27,7 +27,9 @@ const state = (async function () {
 
       const dummyAnswer2 =
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.";
-      const questions = await getQuestionsFor(person, { delay: false });
+      const questions = await getQuestionsFor(person, {
+        shouldPretendNetwork: false,
+      });
       return {
         answers: questions.map((question, i) => {
           return {
@@ -43,7 +45,7 @@ const state = (async function () {
 })();
 
 export async function addFeedbackFor(person: Person, answers: FeedbackPiece[]) {
-  await sleepABit();
+  await pretendNetwork();
   (await state).push({
     answers,
     person,
@@ -52,7 +54,7 @@ export async function addFeedbackFor(person: Person, answers: FeedbackPiece[]) {
 }
 
 export async function getLatestFeedbackFor(person: Person) {
-  await sleepABit();
+  await pretendNetwork();
   const feedbackForPerson = (await state).filter(
     (row) => row.person.id === person.id
   );
