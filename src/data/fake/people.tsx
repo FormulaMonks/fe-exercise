@@ -17,7 +17,11 @@ const people: Person[] = [
 ].map((p, i) => {
   const id = `p${i}`;
   return {
-    avatarUrl: `https://i.pravatar.cc/100?u=${encodeURIComponent(id)}`,
+    avatarUrl:
+      i === 10
+        ? // Pretend to have a broken avatar URL
+          `https://i.pravatar.cc/100?img=999`
+        : `https://i.pravatar.cc/100?u=${encodeURIComponent(id)}`,
     id,
     ...p,
   };
