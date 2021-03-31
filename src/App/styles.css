@@ -1,3 +1,8 @@
+/**
+ * Minimal global styles
+ * Anything beyond should most likely be included with a particular layout in src/layouts
+ */
+
 html {
   margin: 0;
   padding: 0;
