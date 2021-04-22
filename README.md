@@ -25,14 +25,14 @@ The exercise has a list of improvements to be made to the project. There are pur
 
 Use your judgement working on the tasks. It’s okay to skip a task that is needlessly difficult. It’s great to add something that’s not on the list if it does not cost a lot of effort. It’s okay to change UI design and behavior if you have good input, as long as you communicate the changes.
 
-- [ ] Add a “No Reviews Yet” screen to the Review Feedback section;
-- [ ] Improve the layout on smaller screens. In particular, the Review feedback view looks bad right now;
-- [ ] Add a feature to skip a question;
-- [ ] Add a feature to save a questionairre and continue it later;
-- [ ] Add more question types: a multiple choice, a rating slider;
+- [ ] Add a “No Reviews Yet” screen to the Review Feedback section.
+- [ ] Improve the layout on smaller screens. In particular, the Review feedback view looks bad right now.
+- [ ] Add a feature to skip a question.
+- [ ] Add a feature to save a questionairre and continue it later.
+- [ ] Add more question types: a multiple choice, a rating slider.
 - [ ] Handle network errors when submitting feedback
-- [ ] Add a questionairre completion indicator;
-- [ ] Handle avatar loading errors, make them look nicer;
-- [ ] Add a view for feedback you have received;
-- [ ] Fix the background style. Right now it depends on the page length, so when a user navigates between different pages, the bottom right corner of the background shifts aorund;
+- [ ] Add a questionairre completion indicator.
+- [ ] Handle avatar loading errors, make them look nicer.
+- [ ] Add a view for feedback you have received.
+- [ ] Fix the background style. Right now it depends on the page length, so when a user navigates between different pages, the bottom right corner of the background shifts aorund.
 - [ ] Add a feedback period selector.
