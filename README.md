@@ -4,7 +4,15 @@ See the [development guide](./CONTRIBUTING.md).
 
 ## Process
 
-Fork the repository into your account and work there. Commit on the main branch or on new branches, as convenient. At the end please share a link to your repository.
+1. Fork this repository into your account and work there.
+2. Make your repo private
+3. Add the following collaborators to your repo:
+   - `brettdewoody`
+   - `jordanpapaleo`
+   - `denis-sokolov`
+   - `mentos`
+4. Commit changes on the `main` branch or on new branches, whichever you prefer.
+5. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
 
 You can change any existing code or dependencies. Ideally add a brief explanation why.
 
