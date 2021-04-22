@@ -8,6 +8,8 @@ Fork the repository into your account and work there. Commit on the main branch 
 
 You can change any existing code or dependencies. Ideally add a brief explanation why.
 
+At the end of the exercise, please replace the contents of this README with your explanations of what you’ve done, added, changed, or anything else that makes sense to document.
+
 ## Tasks
 
 The exercise has a list of improvements to be made to the project. There are purposefully too many tasks, there is no goal to do all of them. The items at the top of the list are more important than items at the bottom. Project designs are available [in Figma](https://www.figma.com/file/0502uQRIymsq7BEQBhid91bV/Untitled?node-id=0%3A1).
