@@ -34,5 +34,5 @@ Use your judgement working on the tasks. It’s okay to skip a task that is need
 - [ ] Add a questionairre completion indicator.
 - [ ] Handle avatar loading errors, make them look nicer.
 - [ ] Add a view for feedback you have received.
-- [ ] Fix the background style. Right now it depends on the page length, so when a user navigates between different pages, the bottom right corner of the background shifts aorund.
+- [ ] Fix the background style. Right now it depends on the page length, so when a user navigates between different pages, the bottom right corner of the background shifts around.
 - [ ] Add a feedback period selector.
