@@ -12,7 +12,8 @@ See the [development guide](./CONTRIBUTING.md).
    - `denis-sokolov`
    - `mentos`
 4. Commit changes on the `main` branch or on new branches, whichever you prefer.
-5. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
+5. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
+6. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
 
 You can change any existing code or dependencies. Ideally add a brief explanation why.
 
