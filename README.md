@@ -4,16 +4,19 @@ See the [development guide](./CONTRIBUTING.md).
 
 ## Process
 
-1. Fork this repository into your account and work there.
-2. Make your repo private
-3. Add the following collaborators to your repo:
+1. Copy this repository into your account without forking. Step-by-step:
+   1. [Create a new private repository](https://github.com/new) on GitHub under your name;
+   2. Clone the repository: `git clone git@github.com:Theorem/fe-exercise.git`;
+   3. Change the remote URL of the cloned repository: `git remote set-url origin git@github.com:YOUR/PATH.git`;
+   4. Push: `git push --all origin`.
+2. Add the following collaborators to your repo:
    - `brettdewoody`
    - `jordanpapaleo`
    - `denis-sokolov`
    - `mentos`
-4. Commit changes on the `main` branch or on new branches, whichever you prefer.
-5. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
-6. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
+3. Commit changes on the `main` branch or on new branches, whichever you prefer.
+4. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
+5. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
 
 You can change any existing code or dependencies. Ideally add a brief explanation why.
 
