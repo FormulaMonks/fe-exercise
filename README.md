@@ -56,3 +56,4 @@ Project designs are available [in Figma](https://www.figma.com/file/0502uQRIymsq
 
 - [ ] Add a feature to skip a question.
 - [ ] Handle network errors when submitting feedback
+- [ ] Retry button on the crash screen should do something
