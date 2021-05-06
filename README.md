@@ -14,9 +14,10 @@ See the [development guide](./CONTRIBUTING.md).
    - `jordanpapaleo`
    - `denis-sokolov`
    - `mentos`
-3. Commit changes on the `main` branch or on new branches, whichever you prefer.
-4. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
-5. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
+3. Select (at least) 1 task from each of the task groups below - the choice is yours but try to complete at least 1 task from each group.
+4. For each task create a feature branch, then open and merge a PR to the `main` branch when the task is completed. For each completed task we should see a corresponding PR.
+5. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
+6. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
 
 You can change any existing code or dependencies. Ideally add a brief explanation why.
 
