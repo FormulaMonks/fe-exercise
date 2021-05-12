@@ -38,7 +38,7 @@ Project designs are available [in Figma](https://www.figma.com/file/0502uQRIymsq
 ### New UI
 
 - [ ] Add a “No Reviews Yet” screen to the Review Feedback section.
-- [ ] Add a questionairre completion indicator.
+- [ ] Add a questionnaire completion indicator.
 
 ### Improving UI
 
@@ -48,7 +48,7 @@ Project designs are available [in Figma](https://www.figma.com/file/0502uQRIymsq
 
 ### New interactive features
 
-- [ ] Add a feature to save a questionairre and continue it later.
+- [ ] Add a feature to save a questionnaire and continue it later.
 - [ ] Add more question types: a multiple choice, a rating slider.
 - [ ] Add a view for feedback you have received.
 - [ ] Add a feedback period selector.
