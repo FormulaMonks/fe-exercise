@@ -29,7 +29,7 @@ There are groups of tasks we have prepared for this exercise. Inside the groups 
 
 There are purposefully too many tasks, there is no goal to do all of them. Use your judgement working on the tasks. It’s okay to skip a task that is needlessly difficult.
 
-Please do at least one task from every group to show some diversity, though.
+We would like you to spend about 8 hours of development time. In this time, please do at least one task from each group to show some diversity, and use the remaining time to do additional tasks from each group. So a minimum of 4 tasks, and more if you have time.
 
 It’s okay to change UI design and behavior if you have good input, as long as you communicate the changes. It’s great to add something that’s not on the list if it does not cost a lot of effort.
 
