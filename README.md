@@ -10,7 +10,7 @@ See the [development guide](./CONTRIBUTING.md).
    3. Change the remote URL of the cloned repository: `git remote set-url origin git@github.com:YOUR/PATH.git`;
    4. Push: `git push --all origin`.
 2. Select (at least) 1 task from each of the task groups below - the choice is yours but try to complete at least 1 task from each group.
-3. For each task create a feature branch, then open and merge a PR to the `main` branch when the task is completed. For each completed task we should see a corresponding PR.
+3. For each task create a feature branch, then open and merge a PR to the `main` branch when the task is completed. For each completed task we should see a corresponding PR. We will not be able to give a review during your work, so merge PRs yourself without waiting for review approval.
 4. Deploy your project so it's publicly available on the web. One option is [Netlify](https://www.netlify.com/), but many other options exist.
 5. Let us know if you have any questions, and when you're finished with the project, in the designated Slack channel.
 
